@@ -7,10 +7,10 @@ On Windows if you try and scrape the same video it will give you an error since 
 
 -The current version of pytube (12.0.0) is working as of 2/18/2022 without any modifications to the package's source code. 
 
--One issue that may occur in some clips is in the case that someone is saying the target word offscreen and another person's face is detected. 
-
 
 Improvements:
+
+-One issue that may occur in some clips is in the case that someone is saying the target word offscreen and another person's face is detected. 
 
 -File Organization: Videos currently contain the target word in their filename and are put into a folder with all the clips from the same video.
 The actual vowel sound ("ee" or "uh") is not currently included in the filename. 
