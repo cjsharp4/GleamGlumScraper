@@ -115,7 +115,7 @@ for child in root:
 
 		clip.close()
 
-		#if a face is detected for at least 75% of the video
+		#if a face is detected for at least 80% of the video
 		if(faceDetect(clip_name)):
 			saveClip(clip_name)
 		else:
