@@ -124,7 +124,8 @@ for child in root:
 				os.remove(removeFile)
 
 
+
 #remove full length downloaded video
-#removeFile = os.getcwd() + '/' + video_filename
-#if(os.path.isfile(removeFile)):
-	#os.remove(removeFile)
+removeFile = os.getcwd() + '/' + video_filename
+if(os.path.isfile(removeFile)):
+	os.remove(removeFile)
