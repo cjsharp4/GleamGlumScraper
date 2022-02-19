@@ -12,6 +12,8 @@ The current version of pytube (12.0.0) is working as of 2/18/2022 without any mo
 
 One issue that may occur in some clips is in the case that someone is saying the target word offscreen and another person's face is detected. 
 
+Add entire list of "ee" and "uh" words
+
 File Organization: Videos currently contain the target word in their filename and are put into a folder with all the clips from the same video.
 The actual vowel sound ("ee" or "uh") is not currently included in the filename. 
 
