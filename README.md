@@ -12,8 +12,8 @@ On Windows if you try and scrape the same video it will give you an error since 
 
 Improvements:
 
--Videos currently contain the target word in their filename and are put into a folder with all the clips from the same video.
-The phoneme however is not currently included in the filename yet. 
+-File Organization: Videos currently contain the target word in their filename and are put into a folder with all the clips from the same video.
+The actual vowel sound ("ee" or "uh") is not currently included in the filename. 
 
 -Require coords of facial detection box to be a certain size so that face is big enough to see in the video
 
