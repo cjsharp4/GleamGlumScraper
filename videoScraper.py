@@ -4,7 +4,7 @@ from pytube import YouTube #pip install pytube
 from moviepy.editor import * #pip install moviepy
 import cv2 #pip install opencv-python
 import os 
-import pathlib #pip install pathlib
+import pathlib
 
 
 ##TODO require coords to be certain size so that face is big enough to see in video
@@ -113,6 +113,8 @@ for child in root:
 		clip.write_videofile(clip_name, temp_audiofile='temp-audio.m4a', remove_temp=True, codec="libx264", audio_codec="aac")
 		#print(unescape(child.text), int(float(child.attrib['start'])), "\n")
 
+		clip.close()
+
 		#if a face is detected for at least 75% of the video
 		if(faceDetect(clip_name)):
 			saveClip(clip_name)
@@ -123,6 +125,6 @@ for child in root:
 
 
 #remove full length downloaded video
-removeFile = os.getcwd() + '/' + video_filename
-if(os.path.isfile(removeFile)):
-	os.remove(removeFile)
+#removeFile = os.getcwd() + '/' + video_filename
+#if(os.path.isfile(removeFile)):
+	#os.remove(removeFile)
