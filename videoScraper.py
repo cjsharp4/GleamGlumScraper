@@ -4,7 +4,7 @@ from pytube import YouTube #pip install pytube
 from moviepy.editor import * #pip install moviepy
 import cv2 #pip install opencv-python
 import os 
-import pathlib
+import pathlib #pip install pathlib
 
 
 ##TODO require coords to be certain size so that face is big enough to see in video
