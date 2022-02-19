@@ -66,11 +66,16 @@ def saveClip(clip_name):
 
 
 
-#https://www.youtube.com/watch?v=kHWUkDHZqrI&list=LL&index=6
-#kHWUkDHZqrI
+"""
+example video link:
+https://www.youtube.com/watch?v=7iONU9LxeV8
+
+this is the video id:
+7iONU9LxeV8
+"""
 
 video_link = 'https://www.youtube.com/watch?v=7iONU9LxeV8'  
-root = YouTubeTranscriptApi.get_transcript('7iONU9LxeV8')
+root = YouTubeTranscriptApi.get_transcript('7iONU9LxeV8') 
 
 #for key in root:
 #	print(key['text'])
@@ -126,6 +131,10 @@ for child in root:
 
 
 #remove full length downloaded video
-removeFile = os.getcwd() + '/' + video_filename
-if(os.path.isfile(removeFile)):
-	os.remove(removeFile)
+try:
+	removeFile = os.getcwd() + '/' + video_filename
+	if(os.path.isfile(removeFile)):
+		os.remove(removeFile)
+except NameError:
+	print("video did not contain any of the target words")
+	video_filename = None
