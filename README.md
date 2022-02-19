@@ -9,6 +9,7 @@ On Windows if you try and scrape the same video it will give you an error since 
 
 -One issue that may occur in some clips is in the case that someone is saying the target word offscreen and another person's face is detected. 
 
+
 Improvements:
 
 -Videos currently contain the target word in their filename and are put into a folder with all the clips from the same video.
