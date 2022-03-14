@@ -17,10 +17,8 @@ Add the rest of the "ee" and "uh" words to ee_uh_words array
 File Organization: Videos currently contain the target word in their filename and are put into a folder with all the clips from the same video.
 The actual vowel sound ("ee" or "uh") is not currently included in the filename. 
 
-Error handling for videos with no captions
-
 Require coords of facial detection box to be a certain size so that face is big enough to see in the video
 
 Optimize clip length/frame so only target word is in the clip (harder)
 
-Use Selenium WebDriver to automate search for Youtube video links that are likely to contain the target words (hardest)
+Use Selenium WebDriver to automate search for Youtube video links that are likely to contain the target words (WIP)
