@@ -97,7 +97,28 @@ this is the video id:
 #for key in root:
 #	print(key['text'])
 	
-ee_uh_words = ["glum" , "gleam", "hello"] #list of words that we are looking to find in the video
+#list of words that we are looking to find in the video
+ee_uh_words = ['bleem','bleen','breap','dreach','dreek','dreen','fleach','fleem','freach',
+'freen','freap','gleech','gleek','gleap','greech','yeach','keach','cleem','crene','pleech',
+'plene','pleap','preep','scheach','screek','screep','sleech','smeach','smeek','smeem','smeen',
+'smeap','sneme','sneen','spleach','spleek','spleem','spleep','spreach','spreek','spream','spreap',
+'streech','threech','treach','threne','treen','zeech','zeek','zeem','blum','blun','brup','druch',
+'druck','drun','fluch','flum','fruch','frun','frup','gluch','gluck','glup','gruch','yuch','kuch',
+'clum','crun','pluch','plun','plup','prup','schuch','scruck','scrup','sluch','smuch','smuck',
+'smum','smun','smup','snum','snun','spluch','spluck','splum','splup','spruch','spruck','sprum',
+'sprup','struch','thruch','truch','thrun','trun','zuch','zuck','zum','Wean','Mead','Clique','Peek',
+'Keyed','Seep','Sleet','Cream','Wheeze','Creaks','Peat','Deem','Scene','Steed','Heel','Chic','Street',
+'Dream','Bleed','Seek','Teaks','Grief','Theme','Neat','Meme','Reef','Deal','Deke','Cheek','Peer','Meat',
+'Sheik','Beak','Sneak','Peep','Leaks','Deed','Teak','Keys','Heat','Sheave','Meek','Sheet','Sheen','Seem',
+'Been','Speed','Peen','Leash','League','Deel','Bees','Bean','Beam','Seam','Leeks','Stream','Leave',
+'Peace','Keep','Seen','Gleam','Kneel','Scream','Trees','Leak','Beat','Beef','Streak','Peak','Meal','Fiend',
+'Leek','Teach','Fees','Geek','Tweeze','Least','Beast','Heal','Teen','Ream','Scheme','Keel','Bead',
+'Dean','Beet','Wheat','Teared','Meet','Bud','Buck','Bum','Bun','Butt','Bust','Buff','Buzz','Blood',
+'Chuck','Shuck','Cluck','Crux','Crumb','Done','Dud','Dumb','Duck','Drum','Fuzz','Fund','Guck','Glum',
+'Gruff','Hut','Cup','Cud','Cuss','Lug','Luck','Lush','Lust','Love','Luck','Lux','Mud','Mutt','Muck','Mum',
+'Nut','Pus','Puck','Putt','Pun','Pup','Rum','Rough','Scum','Scrum','Sum','Suck','Sup','Some','Sun','Shove',
+'Shun','Shut','Shuck','Slut','Snuck','Spud','Stud','Struck','Strum','Strut','Touch','Tuck','Tux','Ton',
+'Thumb','Truss','Twas','Won','What','Was']
 
 
 for link in range(0,len(video_link_list)):
@@ -125,11 +146,13 @@ for link in range(0,len(video_link_list)):
 				for word in ee_uh_words:
 					if(word in transcript_section):
 						which_word = word
+						
 
 				#for the first instance of a word being found, download the current video
 				if(word_found == False):
 					yt = YouTube(video_link)
 					video_title = yt.title
+					video_title = "".join( x for x in video_title if (x.isalnum() or x in "._- ")) #remove illegal characters from filename
 					video_filename = video_title + ".mp4"
 					#yt.streams.first().download()
 					download_video = yt.streams.filter(progressive = True, file_extension = "mp4").first().download(filename=video_filename)
