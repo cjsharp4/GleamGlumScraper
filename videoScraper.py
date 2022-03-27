@@ -6,6 +6,9 @@ import cv2 #pip install opencv-python
 import os 
 import pathlib #pip install pathlib
 from csv import reader
+import time
+
+start = time.time()
 
 # open file in read mode
 with open('trending_links.csv', 'r') as read_obj:
@@ -71,11 +74,19 @@ def faceDetect(clip_name):
 	return False
 
 
-def saveClip(clip_name):
+def saveClip(clip_name,folder_name,phoneme):
 	cwd = os.getcwd()
 
 	current_filepath = cwd + '/' + clip_name
-	destination_folder = cwd + '/' + clip_name[:-10]
+
+    #gets directory for proper folder based on word's phoneme
+	phoneme_folder = cwd + '/'
+	if(phoneme == "(EE)"):
+		phoneme_folder += "EE_Videos"
+	else:
+		phoneme_folder += "UH_Videos"
+
+	destination_folder = phoneme_folder + '/' + folder_name
 	destination_filepath = destination_folder + '/' + clip_name
 
 	pathlib.Path(destination_folder).mkdir(parents=True, exist_ok=True)
@@ -98,30 +109,17 @@ this is the video id:
 #	print(key['text'])
 	
 #list of words that we are looking to find in the video
-ee_uh_words = ['bleem','bleen','breap','dreach','dreek','dreen','fleach','fleem','freach',
-'freen','freap','gleech','gleek','gleap','greech','yeach','keach','cleem','crene','pleech',
-'plene','pleap','preep','scheach','screek','screep','sleech','smeach','smeek','smeem','smeen',
-'smeap','sneme','sneen','spleach','spleek','spleem','spleep','spreach','spreek','spream','spreap',
-'streech','threech','treach','threne','treen','zeech','zeek','zeem','blum','blun','brup','druch',
-'druck','drun','fluch','flum','fruch','frun','frup','gluch','gluck','glup','gruch','yuch','kuch',
-'clum','crun','pluch','plun','plup','prup','schuch','scruck','scrup','sluch','smuch','smuck',
-'smum','smun','smup','snum','snun','spluch','spluck','splum','splup','spruch','spruck','sprum',
-'sprup','struch','thruch','truch','thrun','trun','zuch','zuck','zum','Wean','Mead','Clique','Peek',
-'Keyed','Seep','Sleet','Cream','Wheeze','Creaks','Peat','Deem','Scene','Steed','Heel','Chic','Street',
-'Dream','Bleed','Seek','Teaks','Grief','Theme','Neat','Meme','Reef','Deal','Deke','Cheek','Peer','Meat',
-'Sheik','Beak','Sneak','Peep','Leaks','Deed','Teak','Keys','Heat','Sheave','Meek','Sheet','Sheen','Seem',
-'Been','Speed','Peen','Leash','League','Deel','Bees','Bean','Beam','Seam','Leeks','Stream','Leave',
-'Peace','Keep','Seen','Gleam','Kneel','Scream','Trees','Leak','Beat','Beef','Streak','Peak','Meal','Fiend',
-'Leek','Teach','Fees','Geek','Tweeze','Least','Beast','Heal','Teen','Ream','Scheme','Keel','Bead',
-'Dean','Beet','Wheat','Teared','Meet','Bud','Buck','Bum','Bun','Butt','Bust','Buff','Buzz','Blood',
-'Chuck','Shuck','Cluck','Crux','Crumb','Done','Dud','Dumb','Duck','Drum','Fuzz','Fund','Guck','Glum',
-'Gruff','Hut','Cup','Cud','Cuss','Lug','Luck','Lush','Lust','Love','Luck','Lux','Mud','Mutt','Muck','Mum',
-'Nut','Pus','Puck','Putt','Pun','Pup','Rum','Rough','Scum','Scrum','Sum','Suck','Sup','Some','Sun','Shove',
-'Shun','Shut','Shuck','Slut','Snuck','Spud','Stud','Struck','Strum','Strut','Touch','Tuck','Tux','Ton',
-'Thumb','Truss','Twas','Won','What','Was']
+ee_uh_words = [['bleem','(EE)'],['bleen','(EE)'],['breap','(EE)'],['dreach','(EE)'],['dreek','(EE)'],['dreen','(EE)'],['fleach','(EE)'],['fleem','(EE)'],['freach','(EE)'],['freen','(EE)'],['freap','(EE)'],['gleech','(EE)'],['gleek','(EE)'],['gleap','(EE)'],['greech','(EE)'],['yeach','(EE)'],['keach','(EE)'],['cleem','(EE)'],['crene','(EE)'],['pleech','(EE)'],['plene','(EE)'],['pleap','(EE)'],['preep','(EE)'],['scheach','(EE)'],['screek','(EE)'],['screep','(EE)'],['sleech','(EE)'],['smeach','(EE)'],['smeek','(EE)'],['smeem','(EE)'],['smeen','(EE)'],['smeap','(EE)'],['sneme','(EE)'],['sneen','(EE)'],['spleach','(EE)'],['spleek','(EE)'],['spleem','(EE)'],['spleep','(EE)'],['spreach','(EE)'],['spreek','(EE)'],['spream','(EE)'],['spreap','(EE)'],['streech','(EE)'],['threech','(EE)'],['treach','(EE)'],['threne','(EE)'],['treen','(EE)'],['zeech','(EE)'],['zeek','(EE)'],['zeem','(EE)'],['blum','(UH)'],['blun','(UH)'],['brup','(UH)'],['druch','(UH)'],['druck','(UH)'],['drun','(UH)'],['fluch','(UH)'],['flum','(UH)'],['fruch','(UH)'],['frun','(UH)'],['frup','(UH)'],['gluch','(UH)'],['gluck','(UH)'],['glup','(UH)'],['gruch','(UH)'],['yuch','(UH)'],['kuch','(UH)'],['clum','(UH)'],['crun','(UH)'],['pluch','(UH)'],['plun','(UH)'],['plup','(UH)'],['prup','(UH)'],['schuch','(UH)'],['scruck','(UH)'],['scrup','(UH)'],['sluch','(UH)'],['smuch','(UH)'],['smuck','(UH)'],['smum','(UH)'],['smun','(UH)'],['smup','(UH)'],['snum','(UH)'],['snun','(UH)'],['spluch','(UH)'],['spluck','(UH)'],['splum','(UH)'],['splup','(UH)'],['spruch','(UH)'],['spruck','(UH)'],['sprum','(UH)'],['sprup','(UH)'],['struch','(UH)'],['thruch','(UH)'],['truch','(UH)'],['thrun','(UH)'],['trun','(UH)'],['zuch','(UH)'],['zuck','(UH)'],['zum','(UH)'],['Wean','(EE)'],['Mead','(EE)'],['Clique','(EE)'],['Peek','(EE)'],['Keyed','(EE)'],['Seep','(EE)'],['Sleet','(EE)'],['Cream','(EE)'],['Wheeze','(EE)'],['Creaks','(EE)'],['Peat','(EE)'],['Deem','(EE)'],['Scene','(EE)'],['Steed','(EE)'],['Heel','(EE)'],['Chic','(EE)'],['Street','(EE)'],['Dream','(EE)'],['Bleed','(EE)'],['Seek','(EE)'],['Teaks','(EE)'],['Grief','(EE)'],['Theme','(EE)'],['Neat','(EE)'],['Meme','(EE)'],['Reef','(EE)'],['Deal','(EE)'],['Deke','(EE)'],['Cheek','(EE)'],['Peer','(EE)'],['Meat','(EE)'],['Sheik','(EE)'],['Beak','(EE)'],['Sneak','(EE)'],['Peep','(EE)'],['Leaks','(EE)'],['Deed','(EE)'],['Teak','(EE)'],['Keys','(EE)'],['Heat','(EE)'],['Sheave','(EE)'],['Meek','(EE)'],['Sheet','(EE)'],['Sheen','(EE)'],['Seem','(EE)'],['Been','(EE)'],['Speed','(EE)'],['Peen','(EE)'],['Leash','(EE)'],['League','(EE)'],['Deel','(EE)'],['Bees','(EE)'],['Bean','(EE)'],['Beam','(EE)'],['Seam','(EE)'],['Leeks','(EE)'],['Stream','(EE)'],['Leave','(EE)'],['Peace','(EE)'],['Keep','(EE)'],['Seen','(EE)'],['Gleam','(EE)'],['Kneel','(EE)'],['Scream','(EE)'],['Trees','(EE)'],['Leak','(EE)'],['Beat','(EE)'],['Beef','(EE)'],['Streak','(EE)'],['Peak','(EE)'],['Meal','(EE)'],['Fiend','(EE)'],['Leek','(EE)'],['Teach','(EE)'],['Fees','(EE)'],['Geek','(EE)'],['Tweeze','(EE)'],['Least','(EE)'],['Beast','(EE)'],['Heal','(EE)'],['Teen','(EE)'],['Ream','(EE)'],['Scheme','(EE)'],['Keel','(EE)'],['Bead','(EE)'],['Dean','(EE)'],['Beet','(EE)'],['Wheat','(EE)'],['Teared','(EE)'],['Meet','(EE)'],['Bud','(UH)'],['Buck','(UH)'],['Bum','(UH)'],['Bun','(UH)'],['Butt','(UH)'],['Bust','(UH)'],['Buff','(UH)'],['Buzz','(UH)'],['Blood','(UH)'],['Chuck','(UH)'],['Shuck','(UH)'],['Cluck','(UH)'],['Crux','(UH)'],['Crumb','(UH)'],['Done','(UH)'],['Dud','(UH)'],['Dumb','(UH)'],['Duck','(UH)'],['Drum','(UH)'],['Fuzz','(UH)'],['Fund','(UH)'],['Guck','(UH)'],['Glum','(UH)'],['Gruff','(UH)'],['Hut','(UH)'],['Cup','(UH)'],['Cud','(UH)'],['Cuss','(UH)'],['Lug','(UH)'],['Luck','(UH)'],['Lush','(UH)'],['Lust','(UH)'],['Love','(UH)'],['Luck','(UH)'],['Lux','(UH)'],['Mud','(UH)'],['Mutt','(UH)'],['Muck','(UH)'],['Mum','(UH)'],['Nut','(UH)'],['Pus','(UH)'],['Puck','(UH)'],['Putt','(UH)'],['Pun','(UH)'],['Pup','(UH)'],['Rum','(UH)'],['Rough','(UH)'],['Scum','(UH)'],['Scrum','(UH)'],['Sum','(UH)'],['Suck','(UH)'],['Sup','(UH)'],['Some','(UH)'],['Sun','(UH)'],['Shove','(UH)'],['Shun','(UH)'],['Shut','(UH)'],['Shuck','(UH)'],['Slut','(UH)'],['Snuck','(UH)'],['Spud','(UH)'],['Stud','(UH)'],['Struck','(UH)'],['Strum','(UH)'],['Strut','(UH)'],['Touch','(UH)'],['Tuck','(UH)'],['Tux','(UH)'],['Ton','(UH)'],['Thumb','(UH)'],['Truss','(UH)'],['Twas','(UH)'],['Won','(UH)'],['What','(UH)'],['Was','(UH)']] 
 
+#get list of ee_uh_words without the phoneme as a tuple
+ee_uh = [x[0] for x in ee_uh_words]
+
+
+test_counter = 0
 
 for link in range(0,len(video_link_list)):
+
+	test_counter += 1
 
 	video_link = video_link_list[link]  
 	
@@ -138,15 +136,18 @@ for link in range(0,len(video_link_list)):
 			transcript_section = child['text'].split()
 
 			#begin downloading and clipping a video if a word from the list is found in the video's transcript
-			if(any(word in transcript_section for word in ee_uh_words)):
+			if(any(word in transcript_section for word in ee_uh)):
 				
 				print("target word found")
 
-				#get which word was said in the clip
-				for word in ee_uh_words:
+				#get which word and phoneme was said in the clip
+				phoneme = ""
+				word_index = 0
+				for word in ee_uh:
 					if(word in transcript_section):
+						phoneme = ee_uh_words[word_index][1]
 						which_word = word
-						
+					word_index += 1
 
 				#for the first instance of a word being found, download the current video
 				if(word_found == False):
@@ -164,8 +165,9 @@ for link in range(0,len(video_link_list)):
 				clip = VideoFileClip(video_filename).subclip(start, end)
 
 				#name file with video's title, the target word found, and number of clip within an individual video 
-				clip_name = video_title + "_" + which_word + "_clip" + str(clip_number) + ".mp4"
+				clip_name = phoneme + "-(" + which_word + ")_" + video_title + "_clip" + str(clip_number) + ".mp4"
 				clip_number += 1
+				folder_name = video_title
 
 				#write file that will contain video and audio
 				clip.write_videofile(clip_name, temp_audiofile='temp-audio.m4a', remove_temp=True, codec="libx264", audio_codec="aac")
@@ -175,7 +177,7 @@ for link in range(0,len(video_link_list)):
 
 				#if a face is detected for at least 80% of the video
 				if(faceDetect(clip_name)):
-					saveClip(clip_name)
+					saveClip(clip_name,folder_name,phoneme)
 				else:
 					removeFile = os.getcwd() + '/' + clip_name
 					if(os.path.isfile(removeFile)):
@@ -192,5 +194,10 @@ for link in range(0,len(video_link_list)):
 		else:
 			if(os.path.isfile(removeFile)):
 				os.remove(removeFile)
-			
-		
+
+#Print number of links analyzed and total elapsed time of script
+end = time.time()
+print("Number of videos analyzed:")
+print(test_counter)
+print("Elapsed Time:")
+print(end - start)
