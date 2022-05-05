@@ -172,7 +172,7 @@ for link in range(0,len(video_link_list)):
                 if(word_found == False):
                     yt = YouTube(video_link)
                     video_title = yt.title
-                    video_title = "".join( x for x in video_title if (x.isalnum() or x in "._- ")) #remove illegal characters from filename
+                    video_title = "".join( x for x in video_title if (x.isalnum())) #remove illegal characters from filename
                     video_filename = video_title + ".mp4"
                     #yt.streams.first().download()
                     download_video = yt.streams.filter(progressive = True, file_extension = "mp4").first().download(filename=video_filename)
