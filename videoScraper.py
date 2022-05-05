@@ -103,8 +103,9 @@ def saveClip(clip_name,folder_name,phoneme):
     destination_filepath = destination_folder + '/' + clip_name
 
     pathlib.Path(destination_folder).mkdir(parents=True, exist_ok=True)
-
-    os.rename(current_filepath, destination_filepath)
+    
+    shutil.move(current_filepath, destination_filepath)
+    #os.rename(current_filepath, destination_filepath)
 
 
 
