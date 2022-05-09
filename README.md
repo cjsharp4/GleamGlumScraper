@@ -12,10 +12,10 @@ Note: Depending on how you initially installed python onto your computer, any co
 2) Extract the files and drag them onto your main Desktop screen for ease of access later.
 3) Open a command prompt (windows) or terminal (mac) on your computer. 
 4) Use command 'cd' to navigate to the folder containing the scraper.
-5) Install all packages by using the command: 'pip install -r requirements.txt'
-6) If step 3 does not work, individually install required packages using command 'pip install name-of-package'
+5) Install all packages by using the command ``pip install -r requirements.txt``
+6) If step 3 does not work, individually install required packages using command ``pip install name-of-package``
 7) Make sure that you have folders: 'EE_Videos' and 'UH_Videos' in the same folder as the python script
-8) Run command 'python videoScraper.py' to run the script. 
+8) Run command ``python videoScraper.py`` to run the script. 
 
 Here is a picture of a windows user navigating to the project folder located on their Desktop directory and running the script:
 
@@ -23,7 +23,7 @@ Here is a picture of a windows user navigating to the project folder located on 
 
 --What to do if pytube is not currently working--
 
-If pytube seems to be causing the script to crash, Use the command: ``pip install --upgrade pytube`` to see if there are any new updates to pytube.
+If pytube seems to be causing the script to crash, Use the command ``pip install --upgrade pytube`` to see if there are any new updates to pytube.
 
 The current version of pytube works as of 5/8/2022, but may stop working in the future for several weeks at a time. If pytube is causing the script to crash, go to: https://github.com/pytube/pytube/issues and see if other people are getting the same error message as you. Often times, the fix for the problem will require you to edit a line of code in 'cipher.py' based on provided solutions listed in the issue ticket on Github. The pytube folder on your computer will probably be located in a similar spot as the picture below:
 
