@@ -36,6 +36,8 @@ The program should now work again.
 
 --Improvements--
 
+There is a chance that the transcript of a video (especially when it was auto-generated) may have some inaccuracies where the a word in a sentence may be different from what was actually said in the video. In this case, the clip may not contain the target word.
+
 One issue that may occur in some clips is in the case that someone is saying the target word offscreen and another person's face is detected. 
  
 Optimize clip length/frame so only target word is in the clip (harder)
