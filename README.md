@@ -6,8 +6,7 @@ I have fixed previous bugs when running the script on windows.
 
 --How to run the script--
 
-*Note* 
-Depending on how you initially installed python onto your computer, any commands that use the keywords 'pip' and 'python' may need to be replaced with 'pip3' and 'python3'.
+-Depending on how you initially installed python onto your computer, any commands that use the keywords 'pip' and 'python' may need to be replaced with 'pip3' and 'python3'.
 
 1) Start by opening a command prompt (windows) or terminal (mac) on your computer.
 2) Install all the packages listed in "requirements.txt' using command 'pip install name-of-package' 
