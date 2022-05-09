@@ -2,7 +2,7 @@
 
 --Some Quick Notes--
 
-I have fixed previous bugs when running the script on windows.
+I have fixed previous bugs that occurred when running the script on windows.
 
 --How to run the script--
 
