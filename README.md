@@ -8,11 +8,18 @@ I have fixed previous bugs when running the script on windows.
 
 Note: Depending on how you initially installed python onto your computer, any commands that use the keywords 'pip' and 'python' may need to be replaced with 'pip3' and 'python3'.
 
-1) Start by opening a command prompt (windows) or terminal (mac) on your computer.
-2) Install all the packages listed in "requirements.txt' using command 'pip install name-of-package' 
-3) Use command 'cd' to navigate to the folder containing the scraper.
-4) Run command 'python videoScraper.py' to run the script.
-5) Make sure that you have folders: 'EE_Videos' and 'UH_Videos' in the same folder as the python script. 
+1) Start by opening a command prompt (windows) or terminal (mac) on your computer. 
+2) Use command 'cd' to navigate to the folder containing the scraper.
+3) Install all packages by using the command: 'pip install -r requirements.txt'
+4) If step 3 does not work, individually install required packages using command 'pip install name-of-package'
+5) Make sure that you have folders: 'EE_Videos' and 'UH_Videos' in the same folder as the python script
+6) Run command 'python videoScraper.py' to run the script. 
+
+Here is a picture of a windows user navigating to the project folder located on their Desktop directory and running the script:
+
+![Capture2](https://user-images.githubusercontent.com/65328908/167336669-508644f6-9289-4c76-9fa9-411a58fc2879.PNG)
+
+--What to do if pytube is not currently working--
 
 The current version of pytube does not work. The file in 'Modified Packages' need to be swapped with the file of the same name in the pytube folder on your desktop. The pytube folder on your computer will probably be located in a similar spot as the picture below:
 
