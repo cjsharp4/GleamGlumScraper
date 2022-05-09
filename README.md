@@ -8,12 +8,14 @@ I have fixed previous bugs when running the script on windows.
 
 Note: Depending on how you initially installed python onto your computer, any commands that use the keywords 'pip' and 'python' may need to be replaced with 'pip3' and 'python3'.
 
-1) Start by opening a command prompt (windows) or terminal (mac) on your computer. 
-2) Use command 'cd' to navigate to the folder containing the scraper.
-3) Install all packages by using the command: 'pip install -r requirements.txt'
-4) If step 3 does not work, individually install required packages using command 'pip install name-of-package'
-5) Make sure that you have folders: 'EE_Videos' and 'UH_Videos' in the same folder as the python script
-6) Run command 'python videoScraper.py' to run the script. 
+1) Press the green 'code' button on the main Github page for this project and download the project ZIP.
+2) Extract the files and drag them onto your main Desktop screen for ease of access later.
+3) Opening a command prompt (windows) or terminal (mac) on your computer. 
+4) Use command 'cd' to navigate to the folder containing the scraper.
+5) Install all packages by using the command: 'pip install -r requirements.txt'
+6) If step 3 does not work, individually install required packages using command 'pip install name-of-package'
+7) Make sure that you have folders: 'EE_Videos' and 'UH_Videos' in the same folder as the python script
+8) Run command 'python videoScraper.py' to run the script. 
 
 Here is a picture of a windows user navigating to the project folder located on their Desktop directory and running the script:
 
