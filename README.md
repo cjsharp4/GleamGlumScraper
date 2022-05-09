@@ -23,10 +23,11 @@ Here is a picture of a windows user navigating to the project folder located on 
 
 --What to do if pytube is not currently working--
 
-The current version of pytube does not work. The file in 'Modified Packages' need to be swapped with the file of the same name in the pytube folder on your desktop. The pytube folder on your computer will probably be located in a similar spot as the picture below:
+If the script is not working, the issue may be that the package pytube need updating. Using command: 'pip install --upgrade pytube' to see if there are any new updates needed.
 
-![Capture1](https://user-images.githubusercontent.com/65328908/167334203-5110cc25-5782-4315-bac7-6d812e2f133a.PNG)
+The current version of pytube works, but may stop working in the future for several weeks at a time. If pytube is causing the script to crash, go to: https://github.com/pytube/pytube/issues and see if other people are getting the same error message as you. Often times, the fix for the problem will require you to edit a line of code in 'cipher.py' based on provided solutions listed in the issue ticket on Github. The pytube folder on your computer will probably be located in a similar spot as the picture below:
 
+![Capture3](https://user-images.githubusercontent.com/65328908/167337589-e508b408-a60d-4e40-8dcf-6c770e936cd6.png)
 
 
 --Improvements--
