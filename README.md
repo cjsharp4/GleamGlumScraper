@@ -39,7 +39,7 @@ Internally, some of these packages required the 'requests' module in order to ma
 
 Note: Depending on how you initially installed python onto your computer, any commands that use the keywords 'pip' and 'python' may need to be replaced with 'pip3' and 'python3'.
 
-1) Press the green 'code' button on the main Github page for this project and download the project ZIP.
+1) Press the green 'code' button on the main GitHub page for this project and download the project ZIP.
 2) Extract the files and drag them onto your main Desktop screen for ease of access later.
 3) Open a command prompt (windows) or terminal (mac) on your computer. 
 4) Use command ``cd`` to navigate to the folder containing the scraper.
