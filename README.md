@@ -1,6 +1,6 @@
 # GleamGlumScraper
 
-This scraper was built to create a real-world dataset of ‘ee’ and ‘uh’ words. The dataset must include the facial movements of the face that said the word. 
+This scraper was built to create a real-world dataset of ‘ee’ and ‘uh’ words. This dataset of video clips must include the facial movements of the face that said the word. 
 
 --Generating the YouTube Links--
 
