@@ -3,10 +3,12 @@
 This scraper was built to create a real-world dataset of ‘ee’ and ‘uh’ words. 
 
 --Generating the YouTube Links--
+
 The scraper relies on another program to generate a list of pseudo-random YouTube links for it to analyze. Our scraper needed to analyze randoms links so that there was no bias in the selection of videos we were collecting data from.
 Using YouTube Data API v3, it was possible to make search queries that return the link to the top result of that query. Doing a search on YouTube with a string of 3 random numbers and 3 random letters seems to be the best way to get a ‘random’ video on YouTube. Through Python’s random module, we generated 200 strings of random numbers and letters using the seed 1 for the first 100 links and seed 3 for the last 100 links.
 
 --Building the Scraper--
+
 The design of the video scraper can be broken down into 5 processes/steps:
 1.	Download the video and search the transcript of the video for target words.
 2.	Create sub clips of sentences where a target word is found.
