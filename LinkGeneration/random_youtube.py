@@ -11,7 +11,6 @@ API_KEY = 'Enter_Google_Developer_API_KEY'
 
 #MAKE SURE TO INCREMENT SEED EACH TIME
 #random.seed(1)
-#random.seed(2)
 random.seed(3)
 
 for i in range(0,100):
