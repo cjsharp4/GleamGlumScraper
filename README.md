@@ -6,7 +6,9 @@ This scraper was built to create a real-world dataset of ‘ee’ and ‘uh’ w
 
 The scraper relies on another program called random_youtube.py (in the LinkGeneration folder) to generate a list of pseudo-random YouTube links for it to analyze. Our scraper needed to analyze randoms links so that there was no bias in the selection of videos we were collecting data from.
 
-Using YouTube Data API v3, it was possible to make search queries that return the link to the top result of that query. Doing a search on YouTube with a 3 character string comprised of random numbers and letters seems to be the best way to get a ‘random’ video on YouTube. Through Python’s random module, we generated 200 strings of random numbers and letters using the seed 1 for the first 100 links and seed 3 for the last 100 links. Some example search queries: 'HCH' would return a video of a Mexican news segment (~12,000 views), 'OU8' would return a video showing off a corporate office (~500 views), and a query of 'OA9' would return a food vlog (~40,000 views). Until Google provides an official API to get random videos on YouTube, this is the best and most recommended way to accomplish this task.
+Using YouTube Data API v3, it was possible to make search queries that return the link to the top result of that query. Doing a search on YouTube with a 3 character string comprised of random numbers and letters seems to be the best way to get a ‘random’ video on YouTube. Through Python’s random module, we generated 200 strings of random numbers and letters using the seed 1 for the first 100 links and seed 3 for the last 100 links. 
+
+Here are some examples of search queries: 'HCH' would return a video of a Mexican news segment (~12,000 views), 'OU8' would return a video showing off a corporate office (~500 views), and a query of 'OA9' would return a food vlog (~40,000 views). Until Google provides an official API to get random videos on YouTube, this is the best and most recommended way to accomplish this task.
 
 --Building the Scraper--
 
