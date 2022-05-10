@@ -29,6 +29,8 @@ Several open source Python packages were utilized to build this scraper.
  -Finally, the opencv module was used to work with their frontal-face classifier in order to detect if 80% of the frames in a video contained a face in it or not. This requirement of 80% seemed to work very well in tests, as the classifier does not always detect a face for the entire length of a video clip (even when the face is present).    
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 --How to run the script--
 
 Note: Depending on how you initially installed python onto your computer, any commands that use the keywords 'pip' and 'python' may need to be replaced with 'pip3' and 'python3'.
