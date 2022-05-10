@@ -22,11 +22,11 @@ Several open source Python packages were utilized to build this scraper.
 
  -Pytube provided an easy method to download an mp4 file for each video link. 
 
- -The youtube-transcript-api package was used to get the transcripts of each video. In addition to giving the transcript of a video, this package also included the   time-stamp and duration for each sentence spoken in the video. 
+ -The youtube-transcript-api package was used to get the transcripts of each video. In addition to giving the transcript of a video, this package also included the   timestamp and duration for each sentence spoken in the video. 
 
  -Moviepy was used to create sub clips based on the timestamps provided by the youtube-transcript-api and the full length video file provided by pytube. 
 
- -Finally, the opencv module was used to work with their frontal-face classifier in order to detect if 80% of the frames in a video contained a face in it or not. This requirement of 80% seemed to work very well in tests, as the classifier does not always detect a face for the entire length of a video clip (even when the face is present).    
+ -The OpenCV package was used to work with their frontal-face classifier in order to detect if 80% of the frames in a video contained a face in it or not. This requirement of 80% seemed to work very well in tests, as the classifier does not always detect a face for the entire length of a video clip (even when the face is present).    
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
