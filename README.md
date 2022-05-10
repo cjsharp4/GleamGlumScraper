@@ -16,7 +16,7 @@ The design of the video scraper can be broken down into 5 processes/steps:
 4.	Save the sub clip and move it to the proper folder if a face is found to be present.
 5.	Delete all clips that do not have a face present and full-length video.
 
-After each video is analyzed, any accepted sub clips are placed into a folder based on which phoneme was in the target word found and then into another folder based on the title of the video. The file name of each sub clip would follow the format: '(PHONEME)-(WORD)-TITLE_CLIP#.mp4'. Here is an example of this format: '(EE)-(me)_ Minimal Every Day Carry EDC_clip76.mp4'
+After each video is analyzed, any accepted sub clips are placed into a folder based on which phoneme was in the target word found and then into another folder based on the title of the video. The file name of each sub clip would follow the format: '(PHONEME)-(WORD)-TITLE_CLIP#.mp4'. Here is an example of this format: '(EE)-(me)_ Minimal Every Day Carry EDC_clip76.mp4'.
 
 
 --How to run the script--
