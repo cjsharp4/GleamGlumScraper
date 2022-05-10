@@ -18,6 +18,8 @@ The design of the video scraper can be broken down into 5 processes/steps:
 
 After each video is analyzed, any accepted sub clips are placed into a folder based on which phoneme was in the target word found and then into another folder based on the title of the video. The file name of each sub clip would follow the format: '(PHONEME)-(WORD)-TITLE_CLIP#.mp4'. Here is an example of this format: '(EE)-(me)_ Minimal Every Day Carry EDC_clip76.mp4'.
 
+Several Python packages were utilized to build this scraper. The youtube-transcript-api package was used to get the transcripts of each video. In addition to giving the transcript of a video, this package would also include the time-stamp and duration for each sentence spoken in the video.   
+
 
 --How to run the script--
 
