@@ -1,8 +1,20 @@
 # GleamGlumScraper
 
---Some Quick Notes--
+This scraper was built to create a real-world dataset of ‘ee’ and ‘uh’ words. 
+--Generating the YouTube Links--
+The scraper relies on another program to generate a list of pseudo-random YouTube links for it to analyze. Our scraper needed to analyze randoms links so that there was no bias in the selection of videos we were collecting data from.
+Using YouTube Data API v3, it was possible to make search queries that return the link to the top result of that query. Doing a search on YouTube with a string of 3 random numbers and 3 random letters seems to be the best way to get a ‘random’ video on YouTube. Through Python’s random module, we generated 200 strings of random numbers and letters using the seed 1 for the first 100 links and seed 3 for the last 100 links.
 
-I have fixed previous bugs that occurred when running the script on windows.
+--Building the Scraper—
+The design of the video scraper can be broken down into 5 processes/steps:
+1.	Download the video and search the transcript of the video for target words.
+2.	Create sub clips of sentences where a target word is found.
+3.	Use the OpenCV facial classifier to determine if the sub clip has a face present in the video for more than 80% of the frames.
+4.	Save the sub clip and move it to the proper folder if a face is found to be present.
+5.	Delete all clips that do not have a face present and full-length video.
+
+After each video is analyzed, any accepted sub clips are placed into a folder based on which phoneme was in the target word found and then into another folder based on the title of the video. The file name of each sub clip would follow the format ``(PHONEME)-(WORD)-TITLE_CLIP#.mp4``. 
+
 
 --How to run the script--
 
